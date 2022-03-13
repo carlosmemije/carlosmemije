@@ -9,13 +9,13 @@ body {
 
 
  ul {
-    font-size: 2vw;
+    font-size: 4vw;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgb(51, 51, 51);
-    opacity: 0.38;
+    opacity: 0.5;
   }
   
  li {
