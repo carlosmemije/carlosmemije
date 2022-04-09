@@ -75,7 +75,7 @@ div {
   text-decoration: underline;
 }
 
-.links :active {
+.web :active {
   color: rgb(0, 200, 255);
   background-color: transparent;
   text-decoration: underline;
