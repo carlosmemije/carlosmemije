@@ -3,11 +3,15 @@ html {
 }
 
 body {
-  background-color: rgb(216, 197, 167);
+  background-color: #F4E5C8;
   font-family: 'Courier New', 'monospace';
   width: auto;
   height: auto;
   margin: 15px;
+}
+
+img {
+  border-radius: 25px;
 }
 
 ul {
