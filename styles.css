@@ -6,16 +6,18 @@
 
 /* Apply some default styling to body */
 body {
-  font-family: 'Courier New', 'monospace';
+  font-family: 'Gabarito', sans-serif;
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  font-size: 20px; /* Adjust the font size for h1 elements */
+
 }
 
 .glowing-background {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   mix-blend-mode: screen;
   pointer-events: none;
   transition: transform 0.3s ease-out, filter 0.3s ease-out;
@@ -30,7 +32,7 @@ body {
 }
 
 .header-image {
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   opacity: 0; /* Initially set opacity to 0 */
   transition: opacity 3s ease; /* Add a 3-second transition for opacity */
@@ -87,15 +89,26 @@ body {
   display: inline-block;
   margin: 10px;
   text-align: center;
+  max-width: 50px; /* Set the maximum width for the images */
+  text-decoration: none; /* Remove text decoration for anchor elements */
+  transition: transform 0.3s ease-in-out;
+
 }
+
+
+.link-image:hover {
+  transform: scale(1.2); /* Increase the size of the image on hover */
+}
+
+/* Add a subtle shadow effect on hover */
+.link-image:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 
 .link-image img {
-  width: 50px; /* Adjust the width as needed */
+  width: 100%; /* Ensure images fill their container */
   height: auto; /* Maintain aspect ratio */
-}
-
-.link-image span {
-  display: block;
 }
 
 
@@ -120,14 +133,28 @@ body {
   padding: 10px; /* Adjust the padding value as needed */
 }
 
+/* CSS styles for the list */
+ul {
+  list-style-type: disc; /* Use disc bullets (•) */
+  margin-left: 40px; /* Adjust the indentation as needed */
+  padding-left: 0; /* Remove default padding */
+}
+
+li {
+  margin-bottom: 5px; /* Add space between list items */
+}
+
+
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   /* Add styles for screens with a max width of 768px */
   .header-text {
     top: 2%;
+    font-size: 10px; /* Adjust the font size for smaller screens */
+
   }
   .header-image {
-    max-width: 100%;
+    max-width: 80%;
   }
   .header {
     padding: 10px 0; /* Reduce padding for smaller screens */
@@ -144,3 +171,4 @@ body {
     font-size: 16px; /* Reduce font size for paragraphs on smaller screens */
   }
 }
+
