@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply some default styling to body */
+body {
+  font-family: 'Courier New', 'monospace';
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.glowing-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  filter: blur(10px);
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 20px 0;
+
+}
+
+.header-image {
+  max-width: 600px;
+  height: auto;
+  opacity: 0; /* Initially set opacity to 0 */
+  transition: opacity 3s ease; /* Add a 3-second transition for opacity */
+}
+
+.header-text {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Navigation Scrollbar Styles */
+.scrollbar {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.dot {
+  width: 10px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add styles for the active dot */
+.dot.active {
+  background-color: rgba(0, 89, 255, 0.752); /* Change to your desired active dot color */
+}
+
+.centered-links {
+  text-align: center;
+}
+
+.link-image {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.link-image img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.link-image span {
+  display: block;
+}
+
+
+
+/* Main Content Section Styles */
+.section {
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section h2,
+.section p,
+.section h3,
+.section h4 {
+  padding: 10px; /* Adjust the padding value as needed */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  /* Add styles for screens with a max width of 768px */
+  .header-text {
+    top: 2%;
+  }
+  .header-image {
+    max-width: 100%;
+  }
+  .header {
+    padding: 10px 0; /* Reduce padding for smaller screens */
+  }
+  .section {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .section h2 {
+    font-size: 24px; /* Reduce font size for h2 on smaller screens */
+  }
+
+  .section p {
+    font-size: 16px; /* Reduce font size for paragraphs on smaller screens */
+  }
+}
