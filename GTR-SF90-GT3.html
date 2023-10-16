@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+    />
+
+    <title>GTR-SF90-GT3</title>
+
+    <style>
+      body {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+
+      #countdown {
+        font-size: 24px;
+        font-family: 'Orbitron', sans-serif;
+        color: rgb(0, 157, 255);
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .back-button {
+        background-color: rgb(0, 157, 255);
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .image-container img {
+        max-width: 50%;
+        height: auto;
+        margin: 5px;
+      }
+
+      @media (max-width: 600px) {
+        .image-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GTR-SF90-GT3</h1>
+    <div id="countdown"></div>
+
+    <div class="image-container">
+      <img src="images/gtr.jpg" alt="Image 1" />
+      <img src="images/sf90.jpg" alt="Image 2" />
+      <img src="images/gt3.jpg" alt="Image 3" />
+    </div>
+
+    <button class="back-button" onclick="window.location.href = 'index.html';">
+      &larr;
+    </button>
+
+    <script>
+      function updateCountdown() {
+        const currentDate = new Date();
+        const targetDate = new Date('2025-01-11T00:00:00');
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+          document.getElementById('countdown').textContent =
+            'Countdown expired!';
+        } else {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          // Format the timer in digital style
+          const timerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          document.getElementById('countdown').textContent = timerText;
+        }
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>
