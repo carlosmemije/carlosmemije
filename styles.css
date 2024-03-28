@@ -129,7 +129,7 @@ body {
 /* Main Content Section Styles */
 
 h2 {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -175,4 +175,31 @@ li {
   .section p {
     font-size: 16px; /* Reduce font size for paragraphs on smaller screens */
   }
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+}
+
+iframe {
+  width: 80%; /* Adjust the width as per requirement */
+  height: 80vh; /* Adjust the height as per requirement */
+  border: none; /* Optional: Removes the border */
+}
+
+.project-link {
+  color: inherit; /* This makes the link use the text color of its parent element */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold; /* Makes the link text bold */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: #000; /* Change to desired hover color */
+  cursor: pointer; /* Changes cursor to the pointer hand */
+  text-decoration: underline; /* Adds underline on hover for more emphasis */
 }
