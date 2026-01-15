@@ -4,204 +4,255 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
 .navbar {
-  background-color: rgba(
-    51,
-    51,
-    51,
-    0.7
-  ); /* Adjust the alpha value for transparency */
-  display: flex;
-  overflow: hidden;
   position: fixed;
   top: 0;
-  height: 60px;
-  width: 100%;
+  right: 0;
+  padding: 30px 40px;
   display: flex;
-  padding: 10px 20px;
-  z-index: 1000px;
-  font-size: 28px;
-  justify-content: space-around; /* Center the items horizontally */
-  align-items: center; /* Center the items vertically */
+  gap: 30px;
+  z-index: 1000;
 }
 
 .navbar a {
-  color: #000000;
+  color: #fff;
   text-decoration: none;
-  flex: 1; /* Distribute available space equally among the items */
-  text-align: center; /* Center the text within each link */
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, opacity 0.3s ease;
 }
 
-body {
-  background-color: #81818159;
-  padding-top: 60px;
-  font-family: 'Turret Road', sans-serif;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  font-size: 20px; /* Adjust the font size for h1 elements */
-  color: #000000;
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-#cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border: 1px solid #000000;
-  border-radius: 50%;
-  pointer-events: none;
-  transition: transform 0.1s ease-out;
-  transform-origin: 50% 50%;
-  mix-blend-mode: difference;
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  max-width: 1000px;
 }
 
-#dot {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background-color: #000000;
-  border-radius: 50%;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.hero-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 30px;
 }
 
-.glowing-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 80%;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  transition: transform 0.3s ease-out, filter 0.3s ease-out;
-  filter: blur(10px);
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
 }
 
-/* Header Styles */
-.header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.header-image {
-  max-width: 400px;
-  height: auto;
-  opacity: 0; /* Initially set opacity to 0 */
-  transition: opacity 3s ease; /* Add a 3-second transition for opacity */
-}
-
-.header-text {
-  position: absolute;
-  top: 1%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.centered-links {
-  text-align: center;
-}
-
-.link-image {
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  max-width: 50px; /* Set the maximum width for the images */
-  text-decoration: none; /* Remove text decoration for anchor elements */
-  transition: transform 0.3s ease-in-out;
-}
-
-.link-image:hover {
-  transform: scale(1.2); /* Increase the size of the image on hover */
-}
-
-/* Add a subtle shadow effect on hover */
-.link-image:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.link-image img {
-  width: 100%; /* Ensure images fill their container */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Main Content Section Styles */
-
-h2 {
-  font-size: 30px;
+.hero p {
+  font-size: 1.2rem;
+  color: #888;
+  max-width: 600px;
+  font-weight: 300;
   margin-bottom: 20px;
 }
 
-h2,
-p,
-h3,
-h4 {
-  padding: 10px; /* Adjust the padding value as needed */
+.skills-section,
+.resume-section,
+.contact-section {
+  padding: 70px 40px;
+  max-width: 1000px;
 }
 
-/* CSS styles for the list */
-ul {
-  list-style-type: disc; /* Use disc bullets (•) */
-  margin-left: 40px; /* Adjust the indentation as needed */
-  padding-left: 0; /* Remove default padding */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
-li {
-  margin-bottom: 5px; /* Add space between list items */
+.skill-item {
+  margin-bottom: 50px;
+  padding-top: 30px;
+  position: relative;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  /* Add styles for screens with a max width of 768px */
-  .header-text {
-    top: 2%;
-    font-size: 10px; /* Adjust the font size for smaller screens */
-  }
-  .header-image {
-    max-width: 80%;
-  }
-  .header {
-    padding: 10px 0; /* Reduce padding for smaller screens */
-  }
-  .section {
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
-
-  .section h2 {
-    font-size: 24px; /* Reduce font size for h2 on smaller screens */
-  }
-
-  .section p {
-    font-size: 16px; /* Reduce font size for paragraphs on smaller screens */
-  }
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #333;
 }
 
-.iframe-container {
+.skill-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  animation: loadLine 2s ease-in-out infinite;
+}
+
+@keyframes loadLine {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 100%; }
+}
+
+.skill-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.skill-item p {
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 300;
+  max-width: 700px;
+}
+
+.job-entry {
+  margin-bottom: 60px;
+}
+
+.job-header {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full height of the viewport */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-iframe {
-  width: 80%; /* Adjust the width as per requirement */
-  height: 80vh; /* Adjust the height as per requirement */
-  border: none; /* Optional: Removes the border */
+.job-title {
+  font-weight: 600;
 }
 
-.project-link {
-  color: inherit; /* This makes the link use the text color of its parent element */
-  text-decoration: none; /* Removes underline from links */
-  font-weight: bold; /* Makes the link text bold */
-  transition: color 0.3s ease; /* Smooth transition for color change */
+.job-date {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.project-link:hover,
-.project-link:focus {
-  color: #000; /* Change to desired hover color */
-  cursor: pointer; /* Changes cursor to the pointer hand */
-  text-decoration: underline; /* Adds underline on hover for more emphasis */
+.resume-section ul {
+  list-style: none;
+}
+
+.resume-section li {
+  color: #888;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.resume-section li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+.contact-section {
+      padding: 100px 40px 80px;
+      max-width: 1000px;
+      position: relative;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #333;
+    }
+
+    .contact-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #fff;
+      animation: loadLine 2s ease-in-out infinite;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .contact-section a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 2px;
+      transition: opacity 0.3s;
+    }
+
+    .contact-section a:hover {
+      opacity: 0.6;
+    }
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed; /* already fixed, just to be sure */
+    top: 0;          /* stick to top */
+    left: 50%;       /* center horizontally */
+    transform: translateX(-50%);
+    padding: 12px 16px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    z-index: 1000;   /* ensure it stays on top */
+    width: 300px;     /* or set a fixed width if you want */
+  }
+
+  .navbar a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .skills-section,
+  .resume-section,
+  .contact-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
 }
