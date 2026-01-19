@@ -1,3 +1,3 @@
-Carlos Memije is my name.
-
-![Website](http://g.recordit.co/wfm0srbWyx.gif)
+- [https://carlosmemije.com](https://carlosmemije.com)
+- [https://linkedin.com/in/carlosmemije](https://linkedin.com/in/carlosmemije)
+- [Resume](https://drive.google.com/file/d/1QGTqCQsVPp8Gr2POdm1D03pDf4C4UNGA/view?usp=sharing)
