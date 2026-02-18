@@ -1,3 +1,3 @@
-- [https://carlosmemije.com](https://carlosmemije.com)
+- [https://carlosm.dev](https://carlosm.dev)
 - [https://linkedin.com/in/carlosmemije](https://linkedin.com/in/carlosmemije)
 - [Resume](https://drive.google.com/file/d/1QGTqCQsVPp8Gr2POdm1D03pDf4C4UNGA/view?usp=sharing)
