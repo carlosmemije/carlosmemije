@@ -256,3 +256,13 @@ body {
     margin-bottom: 40px;
   }
 }
+
+/*
+make highlighting be blue
+*/
+
+::selection {
+  background: white;
+  color: black;
+ 
+}
