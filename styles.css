@@ -20,6 +20,8 @@ body {
   display: flex;
   gap: 30px;
   z-index: 1000;
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
 
 .navbar a {
