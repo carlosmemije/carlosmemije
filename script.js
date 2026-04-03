@@ -10,6 +10,62 @@ document.addEventListener("DOMContentLoaded", function () {
         headerImage.style.opacity = "1";
     }, 100);
 
+            const emailLink = document.getElementById("email-link");
+        const emailText = emailLink.querySelector(".email-text");
+
+        const email = "carlosmemije25@gmail.com";
+
+        // detect mobile
+        const isMobile = window.matchMedia("(hover: none)").matches;
+
+        // hover behavior (desktop only)
+        if (!isMobile) {
+            emailLink.addEventListener("mouseenter", () => {
+                emailText.textContent = email;
+            });
+
+            emailLink.addEventListener("mouseleave", () => {
+                emailText.textContent = "EMAIL";
+            });
+        }
+
+        // click behavior (both desktop + mobile)
+        emailLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            navigator.clipboard.writeText(email);
+
+            // on mobile, show email since no hover
+            if (isMobile) {
+                emailText.textContent = email;
+
+                setTimeout(() => {
+                    emailText.textContent = "EMAIL";
+                }, 3000);
+            }
+
+            // animate icon
+            emailLink.classList.add("copied");
+            setTimeout(() => emailLink.classList.remove("copied"), 500);
+
+            showToast("Email copied to clipboard");
+        });
+
+                function showToast(message) {
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.textContent = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add("show"), 10);
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
     // Consolidated mousemove event listener
     document.addEventListener('mousemove', (e) => {
         const cursor = document.getElementById('cursor');
